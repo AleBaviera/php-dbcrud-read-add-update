@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+  font-family: 'Lato', sans-serif;
+
+  user-select: none;
+  list-style: none;
+}
+
+.container {
+
+  width: 100vw;
+  height: 100vh;
+
+  padding: 50px 25px;
+
+  /* overflow: hidden; */
+
+
+}
+.container .drinks{
+  background-color: purple;
+  color: white;
+}
+
+.drinksSquares{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+
+}
+
+.drinkSquare{
+  background-color: gray;
+  color: white;
+
+  margin: 5px;
+  padding: 5px;
+}
