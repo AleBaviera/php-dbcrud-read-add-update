@@ -25,8 +25,9 @@
                   marca= "'. $newBrand .'",
                   prezzo='. $newPrice .',
                   scadenza="'. $newDate .'"
+              WHERE id='.$id.'
               ';
-      
+
     $res = $conn -> query($query);
 
 

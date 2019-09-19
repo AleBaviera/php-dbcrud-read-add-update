@@ -82,6 +82,7 @@ function addDrink(){
 }
 
 function updateDrink(){
+  var id = thisDrinkId($(this));
   var newType = prompt('aggiorna tipo bevanda');
   var newBrand = prompt('aggiorna marca bevanda');
   var newPrice = prompt('aggiorna prezzo');
@@ -91,6 +92,7 @@ function updateDrink(){
     url: 'api-update-drink.php',
     method: 'GET',
     data: {
+      id: id,
       tipo: newType,
       marca: newBrand,
       prezzo:newPrice,
