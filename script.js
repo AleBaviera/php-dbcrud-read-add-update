@@ -1,10 +1,14 @@
 function init(){
   getDataBar();
+  $(document).on('click', '#btn-del', deleteDrink);
 }
 
-
+function resetPage(){
+  $('.drinksSquares').html('');
+}
 
 function getDataBar(){
+  resetPage();
 
   $.ajax({
     url: 'api.php',
@@ -17,6 +21,26 @@ function getDataBar(){
   });
 }
 
+function thisDrinkId(me){
+  var drink = me.parent();
+  var id = drink.data('id');
+
+  return id;
+}
+
+function deleteDrink(){
+  var idDel = thisDrinkId($(this));
+
+  $.ajax({
+    url: 'api-delete-drink.php',
+    method: 'GET',
+    data: {id: idDel},
+    success: function(data){
+      getDataBar();
+    },
+    error: function(){}
+  });
+}
 function printDataBar(data){
   var target = $('.drinksSquares');
 
