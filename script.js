@@ -1,6 +1,7 @@
 function init(){
   getDataBar();
   $(document).on('click', '#btn-del', deleteDrink);
+  $(document).on('click', '#add', addDrink);
 }
 
 function resetPage(){
@@ -56,6 +57,27 @@ function printDataBar(data){
   }
 }
 
+function addDrink(){
+  var newType = prompt('inserisci tipo bevanda');
+  var newBrand = prompt('inserisci marca bevanda');
+  var newPrice = prompt('inserisci prezzo');
+  var newDate = prompt('inserisci scdenza bevanda');
 
+  $.ajax({
+    url: 'api-add-drink.php',
+    method: 'GET',
+    data: {
+      tipo: newType,
+      marca: newBrand,
+      prezzo:newPrice,
+      scadenza:newDate
+    },
+    success: function(data){
+      getDataBar();
+    },
+    error: function(data){}
+  });
+
+}
 
 $(document).ready(init);
