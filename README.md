@@ -2,3 +2,13 @@
 es read delete update add DB
 
 Using framework Laravel
+
+
+
+.git-ignore
+
+
+
+show
+
+T
